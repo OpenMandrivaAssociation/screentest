@@ -24,9 +24,13 @@ to evaluate the quality of your CRT/LCD monitor (sharpness, linearity, etc).
 %make
 
 %install
+%__rm -rf "%{buildroot}"
+
 %makeinstall
 %find_lang %{name}
 
+%clean
+%__rm -rf "%{buildroot}"
 
 %files -f %{name}.lang
 %defattr(-, root,root)

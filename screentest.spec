@@ -2,7 +2,7 @@ Summary: The CRT screen quality testing utility
 Name: screentest
 Version: 2.0
 Release: %mkrel 1
-License: GPL
+License: GPLv2
 Group: System/X11
 Source: http://downloads.sourceforge.net/project/%{name}/%{name}/%{version}/%{name}-%{version}.tar.gz
 URL: http://sourceforge.net/projects/%{name}/
@@ -34,7 +34,6 @@ to evaluate the quality of your CRT/LCD monitor (sharpness, linearity, etc).
 
 %files -f %{name}.lang
 %defattr(-, root,root)
-%doc README NEW_TESTS COPYING ChangeLog INSTALL NEWS AUTHORS
 %{_bindir}/%{name}
 %{_datadir}/%{name}/%{name}.glade
 

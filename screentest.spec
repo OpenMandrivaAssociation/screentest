@@ -34,6 +34,7 @@ to evaluate the quality of your CRT/LCD monitor (sharpness, linearity, etc).
 
 %files -f %{name}.lang
 %defattr(-, root,root)
+%doc AUTHORS COPYING ChangeLog NEWS README
 %{_bindir}/%{name}
 %{_datadir}/%{name}/%{name}.glade
 

@@ -1,15 +1,14 @@
 Summary: The CRT screen quality testing utility
 Name: screentest
 Version: 2.0
-Release: %mkrel 2
+Release: 3
 License: GPLv2
 Group: System/X11
 Source: http://downloads.sourceforge.net/project/%{name}/%{name}/%{version}/%{name}-%{version}.tar.gz
 URL: http://sourceforge.net/projects/%{name}/
-BuildRequires: gtk+2-devel
-BuildRequires: libglade2-devel
+BuildRequires: pkgconfig(gtk+-2.0)
+BuildRequires: pkgconfig(libglade-2.0)
 
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 Screentest is a simple program which displays various patterns
@@ -20,17 +19,13 @@ to evaluate the quality of your CRT/LCD monitor (sharpness, linearity, etc).
 %setup -q
 
 %build
+export LDFLAGS="-lgmodule-2.0"
 %configure2_5x
 %make
 
 %install
-%__rm -rf "%{buildroot}"
-
 %makeinstall
 %find_lang %{name}
-
-%clean
-%__rm -rf "%{buildroot}"
 
 %files -f %{name}.lang
 %defattr(-, root,root)
@@ -38,3 +33,21 @@ to evaluate the quality of your CRT/LCD monitor (sharpness, linearity, etc).
 %{_bindir}/%{name}
 %{_datadir}/%{name}/%{name}.glade
 %dir %{_datadir}/%{name}/
+
+
+%changelog
+* Tue Dec 07 2010 Oden Eriksson <oeriksson@mandriva.com> 2.0-2mdv2011.0
++ Revision: 614828
+- the mass rebuild of 2010.1 packages
+
+* Fri Jan 15 2010 Michael Scherer <misc@mandriva.org> 2.0-1mdv2010.1
++ Revision: 491784
+- fix missing directory
+
+  + Peťoš Šafařík <petos@mandriva.org>
+    - Documentation like authors, Readme etc. add.
+    - Licence fixed
+    - Cleaning in SPEC fixed.
+    - import screentest
+
+

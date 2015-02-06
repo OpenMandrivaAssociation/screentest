@@ -1,7 +1,7 @@
 Summary: The CRT screen quality testing utility
 Name: screentest
 Version: 2.0
-Release: 3
+Release: 4
 License: GPLv2
 Group: System/X11
 Source: http://downloads.sourceforge.net/project/%{name}/%{name}/%{version}/%{name}-%{version}.tar.gz
